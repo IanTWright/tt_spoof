@@ -1,5 +1,15 @@
 <html>
+<script>
+var OrigDate = new Date("09/28/2019"); 
+var CurrDate = new Date();
+var res = Math.abs(CurrDate - OrigDate) / 1000;
+var days = Math.floor(res / 86400);
 
+  
+//To display the final no. of days (result) 
+document.getElementById('test').innerHTML = days;
+  
+</script>
 <title>Days since GoodGuyTim's last power outage</title>
 <!-- /u/Sybil_System -->
 
@@ -29,11 +39,10 @@ p {
 	margin: 0;
 }
 </style>
-
+<body>
 <p>Days since TEMOTHY's last power outage:</p>
-
-<h1>11</h1>
-
+<h1 id="test"></h1>
+</body>
 <hr>
 <p>
 Previous Record: <b>9</b> 
