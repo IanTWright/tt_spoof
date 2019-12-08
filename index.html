@@ -1,61 +1,62 @@
 <html>
+  <title>Days since TEMOTHY's last power outage</title>
+  <!-- /u/Sybil_System -->
 
-<title>Days since TEMOTHY's last power outage</title>
-<!-- /u/Sybil_System -->
+  <style>
+    h1 {
+      text-align: center;
+      font-size: 666px;
+      margin: -110px;
+      padding: 0px;
+    }
 
-<style>
-h1 {
-	text-align:center;
-	font-size:666px;
-	margin: -110px;
-	padding: 0px;
-}
+    a:link {
+      color: #000000;
+      text-decoration: none;
+    }
 
-a:link {
-	color:#000000;
-	text-decoration:none;
-}
+    a:visited {
+      color: #000000;
+      text-decoration: none;
+    }
 
-a:visited {
+    p {
+      text-align: center;
+      font-size: 24px;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+  <body onload="getDate()">
+    <p>Days since TEMOTHY's last power outage:</p>
+    <h1 id="test"></h1>
+    <hr />
+    <p>
+      Previous Record: <b>71</b>
+      <br />
+      Best Record: <b>71</b>
+      <br />
+    </p>
+    <hr />
 
-	color:#000000;
-	text-decoration:none;
-}	
+    <p>
+      December 8, 2018
+      <a href="https://imgur.com/a/xZ0EsfS"
+        >Power goes out during Last Wish raid.</a
+      >
+    </p>
+    <br />
+    <p>
+      December 8, 2019 <a href="">1 Year anniversery, power goes out again.</a>
+    </p>
+  </body>
+  <script>
+    async function getDate() {
+      let response = await fetch('https://temothy.herokuapp.com/api/v1.0/date');
+      let days = await response.json();
 
-p {
-	text-align: center;
-	font-size: 24px;
-	padding: 0;
-	margin: 0;
-}
-</style>
-<body>
-<p>Days since TEMOTHY's last power outage:</p>
-<h1 id="test"></h1>
-<hr>
-<p>
-Previous Record: <b>71</b> 
-<br>
-Best Record: <b>71</b>
-<br>
-</p>
-<hr>
-
-<p>
-December 8, 2018 <a href="https://imgur.com/a/xZ0EsfS">Power goes out during Last Wish raid.</a></p>
-<br>
-<p>
-December 8, 2019 <a href="">1 Year anniversery, power goes out again.</a></p>
-</body>
-<script>
-var OrigDate = new Date("12/8/2019"); 
-var CurrDate = new Date();
-var res = Math.abs(CurrDate - OrigDate) / 1000;
-var days = Math.floor(res / 86400);
-
-  
-//To display the final no. of days (result) 
-document.getElementById('test').innerHTML = days;
-  
-</script>
+      //To display the final no. of days (result)
+      document.getElementById('test').innerHTML = days;
+    }
+  </script>
 </html>
