@@ -54,6 +54,7 @@
     async function getDate() {
       let response = await fetch('https://temothy.herokuapp.com/api/v1.0/date');
       let recordData = await response.json();
+      console.log(recordData);
 
       //To display the final no. of days (result)
       document.getElementById('currentRecord').innerHTML =
